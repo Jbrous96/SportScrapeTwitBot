@@ -1,0 +1,168 @@
+{
+    "twitter": {
+        "api_key": "YOUR_TWITTER_API_KEY",
+        "api_secret": "YOUR_TWITTER_API_SECRET",
+        "access_token": "YOUR_TWITTER_ACCESS_TOKEN",
+        "access_token_secret": "YOUR_TWITTER_ACCESS_TOKEN_SECRET"
+    },
+    "openai": {
+        "api_key": "YOUR_OPENAI_API_KEY"
+    },
+    "sport": "nba",
+    "team_nicknames": {
+        // Eastern Conference
+        // Atlantic Division
+        "Boston Celtics": "Celtics",
+        "Brooklyn Nets": "Nets",
+        "New York Knicks": "Knicks",
+        "Philadelphia 76ers": "Sixers",
+        "Toronto Raptors": "Raptors",
+
+        // Central Division
+        "Chicago Bulls": "Bulls",
+        "Cleveland Cavaliers": "Cavs",
+        "Detroit Pistons": "Pistons",
+        "Indiana Pacers": "Pacers",
+        "Milwaukee Bucks": "Bucks",
+
+        // Southeast Division
+        "Atlanta Hawks": "Hawks",
+        "Charlotte Hornets": "Hornets",
+        "Miami Heat": "Heat",
+        "Orlando Magic": "Magic",
+        "Washington Wizards": "Wizards",
+
+        // Western Conference
+        // Northwest Division
+        "Denver Nuggets": "Nuggets",
+        "Minnesota Timberwolves": "Wolves",
+        "Oklahoma City Thunder": "Thunder",
+        "Portland Trail Blazers": "Blazers",
+        "Utah Jazz": "Jazz",
+
+        // Pacific Division
+        "Golden State Warriors": "Warriors",
+        "Los Angeles Clippers": "Clippers",
+        "Los Angeles Lakers": "Lakers",
+        "Phoenix Suns": "Suns",
+        "Sacramento Kings": "Kings",
+
+        // Southwest Division
+        "Dallas Mavericks": "Mavs",
+        "Houston Rockets": "Rockets",
+        "Memphis Grizzlies": "Grizzlies",
+        "New Orleans Pelicans": "Pelicans",
+        "San Antonio Spurs": "Spurs"
+    },
+    "team_hashtags": {
+        "Boston Celtics": "#BleedGreen",
+        "Brooklyn Nets": "#NetsWorld",
+        "New York Knicks": "#NewYorkForever",
+        "Philadelphia 76ers": "#PhilaUnite",
+        "Toronto Raptors": "#WeTheNorth",
+        
+        "Chicago Bulls": "#BullsNation",
+        "Cleveland Cavaliers": "#LetEmKnow",
+        "Detroit Pistons": "#DetroitBasketball",
+        "Indiana Pacers": "#BoomBaby",
+        "Milwaukee Bucks": "#FearTheDeer",
+        
+        "Atlanta Hawks": "#TrueToAtlanta",
+        "Charlotte Hornets": "#LetsFly",
+        "Miami Heat": "#HEATCulture",
+        "Orlando Magic": "#MagicTogether",
+        "Washington Wizards": "#DCAboveAll",
+        
+        "Denver Nuggets": "#MileHighBasketball",
+        "Minnesota Timberwolves": "#RaisedByWolves",
+        "Oklahoma City Thunder": "#ThunderUp",
+        "Portland Trail Blazers": "#RipCity",
+        "Utah Jazz": "#TakeNote",
+        
+        "Golden State Warriors": "#DubNation",
+        "Los Angeles Clippers": "#ClipperNation",
+        "Los Angeles Lakers": "#LakeShow",
+        "Phoenix Suns": "#ValleyProud",
+        "Sacramento Kings": "#BeamTeam",
+        
+        "Dallas Mavericks": "#MFFL",
+        "Houston Rockets": "#Rockets",
+        "Memphis Grizzlies": "#GrindCity",
+        "New Orleans Pelicans": "#Pelicans",
+        "San Antonio Spurs": "#PorVida"
+    },
+    "team_colors": {
+        "Boston Celtics": ["#007A33", "#BA9653"],
+        "Brooklyn Nets": ["#000000", "#FFFFFF"],
+        "New York Knicks": ["#006BB6", "#F58426"],
+        "Philadelphia 76ers": ["#006BB6", "#ED174C"],
+        "Toronto Raptors": ["#CE1141", "#000000"],
+        
+        "Chicago Bulls": ["#CE1141", "#000000"],
+        "Cleveland Cavaliers": ["#860038", "#041E42"],
+        "Detroit Pistons": ["#C8102E", "#1D42BA"],
+        "Indiana Pacers": ["#002D62", "#FDBB30"],
+        "Milwaukee Bucks": ["#00471B", "#EEE1C6"],
+        
+        "Atlanta Hawks": ["#E03A3E", "#C1D32F"],
+        "Charlotte Hornets": ["#1D1160", "#00788C"],
+        "Miami Heat": ["#98002E", "#F9A01B"],
+        "Orlando Magic": ["#0077C0", "#C4CED4"],
+        "Washington Wizards": ["#002B5C", "#E31837"],
+        
+        "Denver Nuggets": ["#0E2240", "#FEC524"],
+        "Minnesota Timberwolves": ["#0C2340", "#236192"],
+        "Oklahoma City Thunder": ["#007AC1", "#EF3B24"],
+        "Portland Trail Blazers": ["#E03A3E", "#000000"],
+        "Utah Jazz": ["#002B5C", "#00471B"],
+        
+        "Golden State Warriors": ["#1D428A", "#FFC72C"],
+        "Los Angeles Clippers": ["#C8102E", "#1D428A"],
+        "Los Angeles Lakers": ["#552583", "#FDB927"],
+        "Phoenix Suns": ["#1D1160", "#E56020"],
+        "Sacramento Kings": ["#5A2D81", "#63727A"],
+        
+        "Dallas Mavericks": ["#00538C", "#002B5E"],
+        "Houston Rockets": ["#CE1141", "#000000"],
+        "Memphis Grizzlies": ["#5D76A9", "#12173F"],
+        "New Orleans Pelicans": ["#0C2340", "#C8102E"],
+        "San Antonio Spurs": ["#C4CED4", "#000000"]
+    },
+    "team_arenas": {
+        "Boston Celtics": "TD Garden",
+        "Brooklyn Nets": "Barclays Center",
+        "New York Knicks": "Madison Square Garden",
+        "Philadelphia 76ers": "Wells Fargo Center",
+        "Toronto Raptors": "Scotiabank Arena",
+        
+        "Chicago Bulls": "United Center",
+        "Cleveland Cavaliers": "Rocket Mortgage FieldHouse",
+        "Detroit Pistons": "Little Caesars Arena",
+        "Indiana Pacers": "Gainbridge Fieldhouse",
+        "Milwaukee Bucks": "Fiserv Forum",
+        
+        "Atlanta Hawks": "State Farm Arena",
+        "Charlotte Hornets": "Spectrum Center",
+        "Miami Heat": "Kaseya Center",
+        "Orlando Magic": "Amway Center",
+        "Washington Wizards": "Capital One Arena",
+        
+        "Denver Nuggets": "Ball Arena",
+        "Minnesota Timberwolves": "Target Center",
+        "Oklahoma City Thunder": "Paycom Center",
+        "Portland Trail Blazers": "Moda Center",
+        "Utah Jazz": "Delta Center",
+        
+        "Golden State Warriors": "Chase Center",
+        "Los Angeles Clippers": "Crypto.com Arena",
+        "Los Angeles Lakers": "Crypto.com Arena",
+        "Phoenix Suns": "Footprint Center",
+        "Sacramento Kings": "Golden 1 Center",
+        
+        "Dallas Mavericks": "American Airlines Center",
+        "Houston Rockets": "Toyota Center",
+        "Memphis Grizzlies": "FedExForum",
+        "New Orleans Pelicans": "Smoothie King Center",
+        "San Antonio Spurs": "Frost Bank Center"
+    }
+}c
