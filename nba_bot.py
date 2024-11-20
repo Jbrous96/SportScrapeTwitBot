@@ -9,7 +9,6 @@ from typing import Dict, List, Tuple
 import logging
 import openai
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -23,17 +22,11 @@ class Config:
     def __init__(self, config_path: str = 'config.json'):
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
-        # Twitter API credentials
         self.twitter_api_key = config['twitter']['api_key']
         self.twitter_api_secret = config['twitter']['api_secret']
         self.twitter_access_token = config['twitter']['access_token']
         self.twitter_access_token_secret = config['twitter']['access_token_secret']
-        
-        # OpenAI API key for generating jokes
         self.openai_api_key = config['openai']['api_key']
-        
-        # Sport-specific settings
         self.sport = config['sport']
         self.team_nicknames = config['team_nicknames']
 
@@ -52,7 +45,6 @@ class GameScraper:
             soup = BeautifulSoup(response.text, 'html.parser')
             games = []
 
-            # Example scraping logic (adjust selectors based on actual ESPN HTML structure)
             game_containers = soup.find_all('div', class_='scoreboard')
             
             for game in game_containers:
@@ -72,22 +64,18 @@ class GameScraper:
 
     def _extract_teams(self, game_container) -> Tuple[str, str]:
         """Extract team names from game container."""
-        # Implement based on actual HTML structure
         pass
 
     def _extract_score(self, game_container) -> Tuple[int, int]:
         """Extract final score from game container."""
-        # Implement based on actual HTML structure
         pass
 
     def _extract_player_stats(self, game_container) -> Dict:
         """Extract player statistics from game container."""
-        # Implement based on actual HTML structure
         pass
 
     def _extract_injuries(self, game_container) -> List[str]:
         """Extract injury reports from game container."""
-        # Implement based on actual HTML structure
         pass
 
 class JokeGenerator:
@@ -165,63 +153,44 @@ class TwitterPoster:
         team1, team2 = game_data['teams']
         score1, score2 = game_data['score']
         
-        # Get team hashtags
         hashtag1 = self.config.team_hashtags.get(team1, f"#{team1.replace(' ', '')}")
         hashtag2 = self.config.team_hashtags.get(team2, f"#{team2.replace(' ', '')}")
         
-        # Format arena if available
-        arena = self.config.team_arenas.get(team1)  # Assume team1 is home team
+        arena = self.config.team_arenas.get(team1)
         location = f" at {arena}" if arena else ""
         
         tweet = f"🏁 FINAL SCORE{location}:\n{team1} {score1} - {team2} {score2}\n\n"
         
-        # Add notable stats if available
         if game_data['stats']:
             tweet += "📊 Key Stats:\n"
-            # Add up to 2 notable stats
             for stat in list(game_data['stats'].items())[:2]:
                 tweet += f"• {stat[0]}: {stat[1]}\n"
         
-        # Add injuries if any
         if game_data['injuries']:
             tweet += "\n🏥 Injuries:\n"
-            tweet += f"• {game_data['injuries'][0]}\n"  # Just show the most recent injury
+            tweet += f"• {game_data['injuries'][0]}\n"
         
-        # Add the joke
         tweet += f"\n😄 {joke}\n\n#Sports #GameDay"
         
-        return tweet[:280]  # Twitter character limit
-
+        return tweet[:280] 
+        
 def main():
-    # Load configuration
     config = Config()
-    
-    # Initialize components
     scraper = GameScraper(config.sport)
     joke_generator = JokeGenerator(config.openai_api_key)
     twitter_poster = TwitterPoster(config)
-    
     while True:
         try:
-            # Get latest games
             games = scraper.get_latest_games()
-            
             for game in games:
-                # Generate joke
                 joke = joke_generator.generate_game_joke(game)
-                
-                # Post to Twitter
                 twitter_poster.post_game_update(game, joke)
-                
-                # Wait between posts to avoid rate limits
-                time.sleep(60)
-            
-            # Wait before checking for new games
-            time.sleep(300)  # 5 minutes
-            
+#This time below is so rate limits aren't hit!
+            time.sleep(60)
+            time.sleep(300)      
         except Exception as e:
             logging.error(f"Error in main loop: {str(e)}")
-            time.sleep(300)  # Wait 5 minutes before retrying
+            time.sleep(300)  
 
 if __name__ == "__main__":
     main()
